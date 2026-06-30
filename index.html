@@ -198,30 +198,30 @@
 
     /* V8 : vraie image 3D fournie, plus de faux SVG plat */
     .plating-3d{display:none!important}
-    .real-dish-showcase{position:absolute;left:50%;top:31.5%;width:min(610px,57vw);transform:translate(-50%,-50%);z-index:2;perspective:1400px;overflow:visible}
-    .real-dish-shadow{position:absolute;left:14%;right:14%;bottom:8%;height:17%;border-radius:50%;background:radial-gradient(circle,rgba(86,58,31,.25),transparent 72%);filter:blur(24px);transform:translateY(42px) rotate(-7deg);z-index:0}
-    .real-dish-img{position:relative;z-index:1;width:100%;display:block;filter:drop-shadow(0 34px 42px rgba(83,58,31,.22));transform:perspective(1200px) rotateX(2deg);animation:dishFloat 5.5s ease-in-out infinite}
-    .dish-cloche{position:absolute;left:50%;top:46.5%;width:82%;height:66%;transform:translate(-50%,-50%) rotate(-8deg);z-index:4;pointer-events:none;transition:transform 1.25s cubic-bezier(.2,.7,.2,1),opacity 1.2s ease;transform-origin:50% 92%}
-    .dish-cloche.lifted{transform:translate(-50%,-94%) rotate(-8deg) scale(.97);opacity:0}
-    .cloche-dome{position:absolute;left:8%;right:8%;bottom:11%;height:79%;border-radius:50% 50% 41% 41% / 67% 67% 22% 22%;background:linear-gradient(135deg, rgba(255,255,255,.50), rgba(255,255,255,.18) 24%, rgba(235,224,211,.26) 58%, rgba(177,154,130,.16) 100%);border:1px solid rgba(255,255,255,.48);box-shadow:inset -20px -16px 34px rgba(114,88,62,.10), inset 22px 18px 28px rgba(255,255,255,.26), 0 14px 24px rgba(76,58,38,.14);backdrop-filter:blur(3px)}
-    .cloche-dome::before{content:'';position:absolute;left:16%;top:12%;width:25%;height:44%;border-radius:50%;background:linear-gradient(180deg, rgba(255,255,255,.38), rgba(255,255,255,.03));filter:blur(1px);transform:rotate(12deg)}
-    .cloche-rim{position:absolute;left:5%;right:5%;bottom:6%;height:13%;border-radius:50%;background:linear-gradient(180deg,#efe4d7,#bca384);box-shadow:0 7px 12px rgba(91,67,43,.16), inset 0 2px 2px rgba(255,255,255,.35);border:1px solid rgba(164,133,99,.42)}
-    .cloche-knob{position:absolute;left:50%;top:2%;width:15%;height:16%;transform:translateX(-50%)}
-    .cloche-knob::before{content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:34%;height:55%;background:linear-gradient(180deg,#f7efe5,#c3aa8b);border-radius:12px;box-shadow:0 4px 10px rgba(80,58,35,.10)}
-    .cloche-knob::after{content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);width:100%;height:62%;background:radial-gradient(circle at 35% 30%, #fff9f2, #d7bea1 70%, #b18f69 100%);border-radius:50%;box-shadow:0 8px 18px rgba(86,58,31,.14)}
-    .dish-steam{position:absolute;left:50%;top:36%;width:46%;height:30%;transform:translateX(-50%);z-index:2;pointer-events:none;opacity:.95}
-    .steam-wisp{position:absolute;bottom:0;width:34px;height:92px;border-radius:50%;background:radial-gradient(ellipse at center, rgba(255,255,255,.42) 0%, rgba(255,255,255,.18) 38%, rgba(255,255,255,0) 74%);filter:blur(3px);opacity:0;animation:steamRise 3.6s ease-in-out infinite}
+    .real-dish-showcase{position:absolute;left:50%;top:30.5%;width:min(540px,50vw);transform:translate(-50%,-50%);z-index:2;perspective:1400px;overflow:visible}
+    .real-dish-shadow{position:absolute;left:14%;right:14%;bottom:8%;height:17%;border-radius:50%;background:radial-gradient(circle,rgba(86,58,31,.22),transparent 72%);filter:blur(22px);transform:translateY(36px) rotate(-7deg);z-index:0}
+    .real-dish-img{position:relative;z-index:1;width:100%;display:block;filter:drop-shadow(0 28px 36px rgba(83,58,31,.20));transform:perspective(1200px) rotateX(2deg);animation:dishFloat 5.5s ease-in-out infinite}
+    
+    
+    
+    
+    
+    
+    
+    
+    .dish-steam{position:absolute;left:50%;top:30%;width:64%;height:40%;transform:translateX(-50%);z-index:3;pointer-events:none;opacity:1;mix-blend-mode:screen}
+    .steam-wisp{position:absolute;bottom:0;width:52px;height:132px;border-radius:50%;background:radial-gradient(ellipse at center, rgba(255,255,255,.72) 0%, rgba(255,255,255,.34) 34%, rgba(255,255,255,.12) 56%, rgba(255,255,255,0) 78%);filter:blur(6px);opacity:.18;animation:steamRise 3.8s ease-in-out infinite}
     .steam-wisp::before,.steam-wisp::after{content:'';position:absolute;border-radius:50%;background:inherit;inset:auto}
-    .steam-wisp::before{width:24px;height:46px;left:-9px;top:22px;transform:rotate(-12deg)}
-    .steam-wisp::after{width:22px;height:42px;right:-8px;top:0;transform:rotate(12deg)}
-    .steam-1{left:12%;animation-delay:.2s}
-    .steam-2{left:34%;height:108px;animation-delay:1s}
-    .steam-3{left:55%;height:96px;animation-delay:1.8s}
-    .steam-4{left:76%;height:102px;animation-delay:2.6s}
-    @keyframes steamRise{0%{transform:translateY(14px) scale(.85);opacity:0}15%{opacity:.55}55%{opacity:.35}100%{transform:translateY(-54px) scale(1.18);opacity:0}}
+    .steam-wisp::before{width:34px;height:66px;left:-13px;top:26px;transform:rotate(-14deg)}
+    .steam-wisp::after{width:30px;height:58px;right:-10px;top:4px;transform:rotate(14deg)}
+    .steam-1{left:3%;animation-delay:.1s}
+    .steam-2{left:24%;height:150px;animation-delay:.9s}
+    .steam-3{left:46%;height:138px;animation-delay:1.7s}
+    .steam-4{left:69%;height:148px;animation-delay:2.5s}
+    .steam-5{left:15%;height:120px;animation-delay:1.25s}.steam-6{left:58%;height:160px;animation-delay:3.1s}@keyframes steamRise{0%{transform:translateY(18px) scale(.82);opacity:.02}12%{opacity:.78}45%{opacity:.56}78%{opacity:.28}100%{transform:translateY(-88px) scale(1.26);opacity:0}}
     @keyframes dishFloat{0%,100%{transform:perspective(1200px) rotateX(2deg) translateY(0)}50%{transform:perspective(1200px) rotateX(2deg) translateY(-8px)}}
 
-    @media(max-width:1120px){.grid,.ingredient-shell{grid-template-columns:1fr}.visual-panel{min-height:390px}.ingredient-stage{min-height:540px}.oven-wrap{min-height:440px}.dressage-stage{min-height:560px}.site-nav,.scene-nav{display:none}.topbar{grid-template-columns:auto auto;justify-content:space-between}.header-actions{grid-column:2}.benefit-card{position:relative;display:inline-block;margin:10px;width:calc(50% - 24px);left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important}.dressage-stage{display:block;padding-top:420px;min-height:900px}.dressage-labels{position:relative;left:auto;bottom:auto;transform:none;width:100%;margin-top:245px;justify-content:center}.real-dish-showcase{top:162px;width:min(560px,72vw)}.dish-steam{top:34%;width:42%;height:28%}.controls{left:16px;right:16px;justify-content:space-between}}
+    @media(max-width:1120px){.grid,.ingredient-shell{grid-template-columns:1fr}.visual-panel{min-height:390px}.ingredient-stage{min-height:540px}.oven-wrap{min-height:440px}.dressage-stage{min-height:560px}.site-nav,.scene-nav{display:none}.topbar{grid-template-columns:auto auto;justify-content:space-between}.header-actions{grid-column:2}.benefit-card{position:relative;display:inline-block;margin:10px;width:calc(50% - 24px);left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important}.dressage-stage{display:block;padding-top:420px;min-height:900px}.dressage-labels{position:relative;left:auto;bottom:auto;transform:none;width:100%;margin-top:220px;justify-content:center}.real-dish-showcase{top:154px;width:min(500px,66vw)}.dish-steam{top:27%;width:66%;height:38%}.controls{left:16px;right:16px;justify-content:space-between}}
     @media(max-width:760px){body{overflow:auto}.app{height:auto;overflow:auto}.topbar{left:10px;right:10px;top:10px;grid-template-columns:1fr;justify-items:center;gap:10px}.brand{justify-self:start}.header-actions{grid-column:auto;width:100%;justify-content:center}.progress{top:126px;left:18px;right:18px}.scene{position:relative;opacity:1;visibility:visible;pointer-events:auto;transform:none!important;filter:none!important;min-height:100vh;padding:168px 18px 96px}.stage{height:auto;overflow:visible}.display-title,h1{font-size:clamp(48px,13vw,82px)}h2{font-size:clamp(42px,11vw,68px)}.ingredient-stage{min-height:500px}.ingredient-object{width:86px;height:86px}.ingredient-badge{width:28px;height:28px;font-size:13px}.floating-card{position:relative;right:auto;top:auto;margin:20px}.visual-panel{min-height:360px}.controls{display:none}.mobile-hint{display:block;margin-top:20px;color:var(--muted)}}
   </style>
 </head>
@@ -404,11 +404,8 @@
                 <span class="steam-wisp steam-2"></span>
                 <span class="steam-wisp steam-3"></span>
                 <span class="steam-wisp steam-4"></span>
-              </div>
-              <div class="dish-cloche" id="dishCloche">
-                <div class="cloche-knob"></div>
-                <div class="cloche-dome"></div>
-                <div class="cloche-rim"></div>
+                <span class="steam-wisp steam-5"></span>
+                <span class="steam-wisp steam-6"></span>
               </div>
               <img class="real-dish-img" src="assets/dressage-bowl-3d.png" alt="">
             </div></div>
@@ -470,7 +467,6 @@
     setTimeout(()=>scenes.forEach((s,i)=>{ if(i!==current) s.classList.remove('leaving-up','leaving-down'); }), 820);
     updateUI();
   }
-  let clocheTimer = null;
   function updateUI(){
     progress.style.setProperty('--progress', ((current)/(scenes.length-1)*100)+'%');
     navSceneButtons.forEach((b,i)=>b.classList.toggle('active', i===current));
@@ -478,14 +474,8 @@
     document.getElementById('nextBtn').disabled = current===scenes.length-1;
     notesTitle.textContent = scenes[current].dataset.noteTitle || '';
     notesText.textContent = scenes[current].dataset.note || '';
-    const cloche = document.getElementById('dishCloche');
-    clearTimeout(clocheTimer);
     if(current === 4){
       document.querySelector('.dressage-stage')?.classList.add('plate-reveal');
-      cloche?.classList.remove('lifted');
-      clocheTimer = setTimeout(()=>cloche?.classList.add('lifted'), 2000);
-    } else {
-      cloche?.classList.remove('lifted');
     }
   }
   navButtons.forEach(btn => btn.addEventListener('click', () => setScene(Number(btn.dataset.go))));
