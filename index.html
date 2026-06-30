@@ -95,7 +95,7 @@
     .visual-panel{position:relative;min-height:540px;border-radius:38px;background:rgba(255,255,255,.38);border:1px solid rgba(255,255,255,.46);box-shadow:0 32px 90px rgba(87,62,36,.14);overflow:hidden;backdrop-filter:blur(2px)}
     .visual-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 62% 42%,rgba(255,255,255,.8),transparent 22%),linear-gradient(135deg,rgba(255,255,255,.3),rgba(255,255,255,.04))}
     .hero-illustration{position:absolute;inset:0}
-    .floating-card{position:absolute;right:28px;top:44px;width:260px;padding:20px;border-radius:24px;background:rgba(255,250,241,.76);border:1px solid var(--line);box-shadow:0 22px 52px var(--shadow);backdrop-filter:blur(14px)}
+    .floating-card{position:absolute;right:28px;bottom:28px;width:260px;padding:20px;border-radius:24px;background:rgba(255,250,241,.76);border:1px solid var(--line);box-shadow:0 22px 52px var(--shadow);backdrop-filter:blur(14px)}
     .floating-card strong{font-family:var(--display);font-size:26px}.floating-card p{margin:9px 0 0;color:rgba(33,59,45,.68);line-height:1.55}
     .botanical-line{position:absolute;left:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;border:1px solid rgba(33,59,45,.11)}
     .recipe-strip{display:grid;gap:18px;position:relative;padding-left:64px;margin-top:36px}
@@ -123,6 +123,11 @@
     .side-card .small{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--terra)}
     .side-card h3{font-family:var(--display);font-size:30px;line-height:1.05;margin:12px 0 0;color:var(--green)}
     .side-card p{color:rgba(33,59,45,.70);line-height:1.58;margin:10px 0 0}.mini-track{height:8px;background:rgba(33,59,45,.10);border-radius:999px;overflow:hidden}.mini-track b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--terra),var(--terra2));transition:width .45s ease}
+
+    .selected-ingredient-card{margin-top:12px;padding:30px 30px 34px;min-height:210px}
+    .selected-ingredient-card h3{font-size:36px}
+    .selected-ingredient-card p{font-size:17px;line-height:1.72}
+
     .ingredient-stage{position:relative;min-height:630px;border-radius:42px;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.52),rgba(255,255,255,.12) 56%,transparent 72%)}
     .ingredient-stage svg{position:absolute;inset:0;width:100%;height:100%}
     .ingredient-button{position:absolute;z-index:4;min-height:64px;max-width:290px;padding:10px 18px 10px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,250,241,.9);box-shadow:0 18px 42px rgba(87,62,36,.12);display:flex;align-items:center;gap:12px;color:var(--green);cursor:pointer;transition:.22s ease;animation:floatSoft 6s ease-in-out infinite}
@@ -216,7 +221,7 @@
           <div>
             <div class="kicker anim-in">Saison 2025/2026 · Projet logistique</div>
             <h1 class="anim-in" style="--d:.06s">Ma recette <em>logistique</em></h1>
-            <p class="lead anim-in" style="--d:.12s">Transformer une logistique très terrain en une organisation plus lisible, plus fiable et plus pilotée par la donnée.</p>
+            
             <div class="tag-row anim-in" style="--d:.18s"><span>Grand Ouest multi-sites</span><span>Portage de repas</span><span>Donnée fiable</span></div>
             <button class="cta anim-in" style="--d:.24s" data-next>Commencer la recette</button>
             <p class="mobile-hint">Fais défiler pour parcourir les scènes.</p>
@@ -253,8 +258,8 @@
           <div>
             <div class="kicker anim-in">La mise en place</div>
             <h2 class="anim-in" style="--d:.06s">Choisir les <em>bons axes</em> avant de cuisiner.</h2>
-            <p class="lead anim-in" style="--d:.12s">Chaque projet devient une étape de recette : préparer, doser, fiabiliser, puis standardiser.</p>
-            <div class="quote anim-in" style="--d:.18s"><p>Objectif : raconter l’année sans dashboard, avec une vraie logique de préparation.</p></div>
+            
+            
           </div>
           <div class="recipe-strip">
             <article class="recipe-step anim-in"><div class="recipe-num">01</div><div class="recipe-text"><small>Préparer la base</small><h3>Vision globale des flux</h3><p>Réorganisation Grand Ouest et logique multi-sites.</p></div></article>
@@ -271,8 +276,8 @@
           <div>
             <div class="kicker anim-in">Les ingrédients</div>
             <h2 class="anim-in" style="--d:.06s">Les données entrent dans la <em>marmite</em>.</h2>
-            <p class="lead anim-in" style="--d:.12s">Les étiquettes laissent place à de vrais ingrédients illustrés. Chaque ingrédient rejoint la marmite, pendant que la scène reste stable et lisible.</p>
-            <div class="side-card anim-in" style="--d:.18s"><span class="small">Ingrédient sélectionné</span><h3 id="selectedTitle">Données clients</h3><p id="selectedText">Qui livrer, à quelle maille, client final ou bénéficiaire.</p></div>
+            
+            <div class="side-card selected-ingredient-card anim-in" style="--d:.18s"><span class="small">Ingrédient sélectionné</span><h3 id="selectedTitle">Données clients</h3><p id="selectedText">Qui livrer, à quelle maille, client final ou bénéficiaire.</p></div>
             <div class="side-card anim-in" style="--d:.24s"><div class="mini-track"><b id="recipeGauge"></b></div><h3><span id="recipeCount">0</span> / 5</h3><p>Progression de la recette logistique.</p></div>
           </div>
           <div class="ingredient-stage anim-in" style="--d:.12s" id="ingredientStage">
@@ -369,7 +374,7 @@
           <div class="dressage-head" style="text-align:center;max-width:900px;margin:0 auto">
             <div class="kicker anim-in">Le dressage</div>
             <h2 class="anim-in" style="--d:.06s">Le résultat se <em>sert</em> clairement.</h2>
-            <p class="lead anim-in" style="--d:.12s;margin-left:auto;margin-right:auto">Le dressage devient une vraie assiette 3D stylisée : plus premium, plus cohérente avec l’univers recette, et sans dépendre d’un affichage WebGL.</p>
+            
           </div>
           <div class="dressage-stage anim-in plate-reveal" style="--d:.18s">
             <div class="benefit-card b1"><b>01</b><p>Moins d’erreurs terrain</p></div>
