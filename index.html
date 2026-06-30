@@ -141,7 +141,7 @@
     .oven-wrap{position:relative;min-height:570px;border-radius:42px;background:radial-gradient(circle at 52% 56%,rgba(255,194,120,.25),transparent 28%)}
     .oven-svg{position:absolute;inset:0;width:100%;height:100%}.oven-glow{animation:ovenGlow 2.6s ease-in-out infinite}@keyframes ovenGlow{50%{opacity:.75}}.heat-wave{animation:heatLift 2.7s ease-in-out infinite;transform-origin:center}.heat-wave:nth-child(2){animation-delay:.45s}.heat-wave:nth-child(3){animation-delay:.9s}@keyframes heatLift{0%{opacity:.12;transform:translateY(20px) scale(.85)}45%{opacity:.5}100%{opacity:0;transform:translateY(-45px) scale(1.18)}}
     /* Dressage */
-    .dressage-stage{position:relative;min-height:820px;padding-top:0}.dressage-labels{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);width:min(1180px,100%);display:flex;justify-content:center;gap:18px;flex-wrap:wrap;z-index:4}.benefit-card{position:relative;width:206px;min-height:118px;padding:18px 20px;border-radius:24px;background:rgba(255,250,241,.86);border:1px solid var(--line);box-shadow:0 22px 52px rgba(87,62,36,.12);backdrop-filter:blur(14px);z-index:4}.benefit-card b{font-family:var(--display);color:var(--terra);font-size:18px}.benefit-card p{font-family:var(--display);font-size:22px;line-height:1.12;margin:10px 0 0;color:var(--green)}
+    .dressage-stage{position:relative;min-height:900px;padding-top:0}.dressage-labels{position:absolute;left:50%;bottom:58px;transform:translateX(-50%);width:min(1180px,100%);display:flex;justify-content:center;gap:18px;flex-wrap:wrap;z-index:4}.benefit-card{position:relative;width:206px;min-height:118px;padding:18px 20px;border-radius:24px;background:rgba(255,250,241,.86);border:1px solid var(--line);box-shadow:0 22px 52px rgba(87,62,36,.12);backdrop-filter:blur(14px);z-index:4}.benefit-card b{font-family:var(--display);color:var(--terra);font-size:18px}.benefit-card p{font-family:var(--display);font-size:22px;line-height:1.12;margin:10px 0 0;color:var(--green)}
     .plate-reveal .plate-food{animation:foodReveal .9s ease forwards}.plate-reveal .cloche{animation:clocheLift 1.4s cubic-bezier(.2,.7,.2,1) forwards}@keyframes foodReveal{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:none}}@keyframes clocheLift{0%{transform:translateY(0);opacity:1}55%{transform:translateY(-90px) scale(.98);opacity:.45}100%{transform:translateY(-120px) scale(.95);opacity:0}}
     .final-card{width:min(980px,100%);margin:0 auto;text-align:center;padding:56px;border-radius:36px;background:rgba(255,250,241,.78);border:1px solid var(--line);box-shadow:0 30px 80px rgba(87,62,36,.13);backdrop-filter:blur(16px)}.final-quote{font-family:var(--display);font-size:clamp(38px,4.6vw,72px);line-height:1.05;margin:22px 0 30px;color:var(--green)}
     .notes{position:fixed;z-index:75;top:0;right:0;bottom:0;width:min(430px,92vw);padding:36px 30px;background:rgba(255,250,241,.96);border-left:1px solid var(--line);box-shadow:-20px 0 60px rgba(87,62,36,.16);transform:translateX(100%);transition:.35s ease;color:var(--green);backdrop-filter:blur(14px);overflow:auto}.notes.open{transform:translateX(0)}.notes-close{position:absolute;top:18px;right:18px;border:0;background:transparent;cursor:pointer}.notes h3{font-family:var(--display);font-size:34px;margin:12px 0}.notes p{line-height:1.7;color:rgba(33,59,45,.78)}
@@ -193,10 +193,10 @@
     .ingredient-deco.garlic{right:9%; bottom:18%; width:110px; height:84px; transform:rotate(5deg)}
 
     .dressage-stage{position:relative; min-height:650px}
-    .plating-3d{position:absolute;left:50%;top:32%;width:min(860px,78vw);aspect-ratio:1;transform:translate(-50%,-50%);perspective:1500px;z-index:2}.plate-shadow-3d{position:absolute;left:10%;right:10%;bottom:4%;height:18%;border-radius:50%;background:radial-gradient(circle, rgba(86,58,31,.32), transparent 70%);filter:blur(34px)}.plate-figure{position:absolute;inset:0;width:100%;height:100%;transform:rotateX(62deg) rotateZ(-8deg);transform-style:preserve-3d;filter:drop-shadow(0 40px 64px rgba(83,58,31,.18))}.plate-reveal .plate-food-3d{animation:foodReveal .95s ease forwards}.plate-reveal .plate-figure{animation:none}
+    .plating-3d{position:absolute;left:50%;top:27%;width:min(900px,80vw);aspect-ratio:1;transform:translate(-50%,-50%);perspective:1500px;z-index:2}.plate-shadow-3d{position:absolute;left:8%;right:8%;bottom:2%;height:20%;border-radius:50%;background:radial-gradient(circle, rgba(86,58,31,.34), transparent 70%);filter:blur(38px)}.plate-figure{position:absolute;inset:0;width:100%;height:100%;transform:rotateX(64deg) rotateZ(-8deg);transform-style:preserve-3d;filter:drop-shadow(0 46px 70px rgba(83,58,31,.20))}.plate-reveal .plate-food-3d{animation:foodReveal .95s ease forwards}.plate-reveal .plate-figure{animation:none}
 
 
-    @media(max-width:1120px){.grid,.ingredient-shell{grid-template-columns:1fr}.visual-panel{min-height:390px}.ingredient-stage{min-height:540px}.oven-wrap{min-height:440px}.dressage-stage{min-height:560px}.site-nav,.scene-nav{display:none}.topbar{grid-template-columns:auto auto;justify-content:space-between}.header-actions{grid-column:2}.benefit-card{position:relative;display:inline-block;margin:10px;width:calc(50% - 24px);left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important}.dressage-stage{display:block;padding-top:420px;min-height:920px}.dressage-labels{position:relative;left:auto;bottom:auto;transform:none;width:100%;margin-top:390px;justify-content:center}.plating-3d{top:210px;width:min(720px,92vw)}.controls{left:16px;right:16px;justify-content:space-between}}
+    @media(max-width:1120px){.grid,.ingredient-shell{grid-template-columns:1fr}.visual-panel{min-height:390px}.ingredient-stage{min-height:540px}.oven-wrap{min-height:440px}.dressage-stage{min-height:560px}.site-nav,.scene-nav{display:none}.topbar{grid-template-columns:auto auto;justify-content:space-between}.header-actions{grid-column:2}.benefit-card{position:relative;display:inline-block;margin:10px;width:calc(50% - 24px);left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important}.dressage-stage{display:block;padding-top:420px;min-height:980px}.dressage-labels{position:relative;left:auto;bottom:auto;transform:none;width:100%;margin-top:360px;justify-content:center}.plating-3d{top:180px;width:min(760px,92vw)}.controls{left:16px;right:16px;justify-content:space-between}}
     @media(max-width:760px){body{overflow:auto}.app{height:auto;overflow:auto}.topbar{left:10px;right:10px;top:10px;grid-template-columns:1fr;justify-items:center;gap:10px}.brand{justify-self:start}.header-actions{grid-column:auto;width:100%;justify-content:center}.progress{top:126px;left:18px;right:18px}.scene{position:relative;opacity:1;visibility:visible;pointer-events:auto;transform:none!important;filter:none!important;min-height:100vh;padding:168px 18px 96px}.stage{height:auto;overflow:visible}.display-title,h1{font-size:clamp(48px,13vw,82px)}h2{font-size:clamp(42px,11vw,68px)}.ingredient-stage{min-height:500px}.ingredient-object{width:86px;height:86px}.ingredient-badge{width:28px;height:28px;font-size:13px}.floating-card{position:relative;right:auto;top:auto;margin:20px}.visual-panel{min-height:360px}.controls{display:none}.mobile-hint{display:block;margin-top:20px;color:var(--muted)}}
   </style>
 </head>
@@ -390,12 +390,9 @@
                   <linearGradient id="creamSide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6c7b1"/><stop offset="1" stop-color="#baa991"/></linearGradient>
                   <filter id="foodShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#6a4a2c" flood-opacity=".18"/></filter>
                 </defs>
-                <ellipse cx="450" cy="800" rx="315" ry="78" fill="rgba(86,58,31,.22)"/>
+                <ellipse cx="450" cy="814" rx="332" ry="82" fill="rgba(86,58,31,.24)"/><ellipse cx="450" cy="790" rx="284" ry="52" fill="rgba(255,255,255,.10)"/>
                 <g>
-                  <ellipse cx="450" cy="520" rx="330" ry="330" fill="url(#plateDepth)"/>
-                  <ellipse cx="450" cy="540" rx="326" ry="326" fill="url(#rimSide)"/>
-                  <ellipse cx="450" cy="492" rx="328" ry="328" fill="url(#plateRimTop)"/>
-                  <ellipse cx="450" cy="486" rx="262" ry="262" fill="url(#plateWell)"/>
+                  <ellipse cx="450" cy="534" rx="338" ry="338" fill="#8c765d" opacity=".55"/><ellipse cx="450" cy="520" rx="330" ry="330" fill="url(#plateDepth)"/><ellipse cx="450" cy="550" rx="326" ry="326" fill="url(#rimSide)"/><ellipse cx="450" cy="492" rx="328" ry="328" fill="url(#plateRimTop)"/><ellipse cx="450" cy="486" rx="262" ry="262" fill="url(#plateWell)"/><ellipse cx="450" cy="500" rx="270" ry="270" fill="none" stroke="rgba(140,118,93,.22)" stroke-width="18"/>
                   <ellipse cx="450" cy="506" rx="266" ry="266" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="12"/>
                   <ellipse cx="450" cy="356" rx="156" ry="44" fill="rgba(255,255,255,.22)"/>
                 </g>
@@ -409,7 +406,7 @@
                     <ellipse cx="379" cy="493" rx="92" ry="52" fill="url(#squashTop)" transform="rotate(8 379 493)"/>
                     <ellipse cx="306" cy="480" rx="76" ry="44" fill="url(#squashTop)" transform="rotate(-30 306 480)"/>
                     <g>
-                      <path d="M284 523 l36 -16 l17 18 l-9 22 l-31 5 z" fill="#efe2cf"/><path d="M341 478 l34 -15 l18 18 l-8 20 l-29 5 z" fill="#f1e3d0"/><path d="M381 529 l40 -18 l16 18 l-9 24 l-33 4 z" fill="#efe1ce"/><path d="M321 564 l39 -18 l15 16 l-8 22 l-31 5 z" fill="#f3e6d5"/><path d="M260 475 l33 -14 l15 15 l-7 18 l-27 5 z" fill="#f1e4d2"/>
+                      <path d="M284 523 l36 -16 l17 18 l-9 22 l-31 5 z" fill="#efe2cf"/><path d="M341 478 l34 -15 l18 18 l-8 20 l-29 5 z" fill="#f1e3d0"/><path d="M381 529 l40 -18 l16 18 l-9 24 l-33 4 z" fill="#efe1ce"/><path d="M321 564 l39 -18 l15 16 l-8 22 l-31 5 z" fill="#f3e6d5"/><path d="M260 475 l33 -14 l15 15 l-7 18 l-27 5 z" fill="#f1e4d2"/><path d="M346 548 l30 -13 l14 14 l-7 17 l-24 4 z" fill="#f4e8d8"/>
                       <g fill="#c7b8a3" opacity=".55"><path d="M289 542 l36 -16 l-4 11 l-29 4 z"/><path d="M384 548 l40 -18 l-5 11 l-31 4 z"/></g>
                     </g>
                     <g stroke="#6e472a" stroke-width="7" stroke-linecap="round" opacity=".35"><path d="M274 546 l48 -33"/><path d="M333 493 l45 -27"/><path d="M368 545 l56 -24"/></g>
@@ -441,7 +438,17 @@
                     <path d="M270 321 C297 273 338 284 350 326 C329 356 294 348 270 321 Z" fill="url(#greensTop)"/>
                     <path d="M321 298 C344 252 392 273 396 322 C373 346 338 338 321 298 Z" fill="url(#greensTop)"/>
                     <path d="M360 322 C388 274 430 283 442 323 C421 357 385 348 360 322 Z" fill="url(#greensTop)"/>
-                    <path d="M410 295 C432 252 480 267 487 314 C467 345 433 337 410 295 Z" fill="url(#greensTop)"/>
+                    <path d="M410 295 C432 252 480 267 487 314 C467 345 433 337 410 295 Z" fill="url(#greensTop)"/><path d="M455 314 C480 274 522 286 529 330 C507 357 474 348 455 314 Z" fill="url(#greensTop)"/><path d="M455 330 C480 290 522 302 529 346 C507 373 474 364 455 330 Z" fill="url(#greensSide)" transform="translate(0 14)"/>
+                  </g>
+
+                  <!-- extra garnish and ingredients -->
+                  <g>
+                    <ellipse cx="676" cy="392" rx="18" ry="10" fill="#d7b96f" transform="rotate(-24 676 392)"/>
+                    <ellipse cx="695" cy="404" rx="16" ry="9" fill="#d7b96f" transform="rotate(10 695 404)"/>
+                    <ellipse cx="288" cy="565" rx="22" ry="12" fill="#e89338" transform="rotate(18 288 565)"/>
+                    <ellipse cx="315" cy="583" rx="18" ry="10" fill="#e89338" transform="rotate(-14 315 583)"/>
+                    <g fill="#6f9e56" opacity=".95"><circle cx="530" cy="406" r="4"/><circle cx="520" cy="417" r="3"/><circle cx="512" cy="430" r="3"/><circle cx="694" cy="380" r="3"/><circle cx="704" cy="388" r="3"/></g>
+                    <g fill="#2b241e" opacity=".9"><circle cx="662" cy="370" r="2.5"/><circle cx="652" cy="363" r="2.5"/><circle cx="641" cy="360" r="2.5"/><circle cx="631" cy="358" r="2.5"/></g>
                   </g>
                 </g>
               </svg>
