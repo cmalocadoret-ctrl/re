@@ -198,9 +198,17 @@
 
     /* V8 : vraie image 3D fournie, plus de faux SVG plat */
     .plating-3d{display:none!important}
-    .real-dish-showcase{position:absolute;left:50%;top:33%;width:min(690px,64vw);transform:translate(-50%,-50%);z-index:2;perspective:1400px}
+    .real-dish-showcase{position:absolute;left:50%;top:33%;width:min(690px,64vw);transform:translate(-50%,-50%);z-index:2;perspective:1400px;overflow:visible}
     .real-dish-shadow{position:absolute;left:13%;right:13%;bottom:7%;height:18%;border-radius:50%;background:radial-gradient(circle,rgba(86,58,31,.28),transparent 72%);filter:blur(26px);transform:translateY(48px);z-index:0}
     .real-dish-img{position:relative;z-index:1;width:100%;display:block;filter:drop-shadow(0 42px 52px rgba(83,58,31,.24));transform:perspective(1200px) rotateX(2deg);animation:dishFloat 5.5s ease-in-out infinite}
+    .dish-cloche{position:absolute;left:50%;top:47%;width:76%;height:60%;transform:translate(-50%,-50%);z-index:3;pointer-events:none;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),opacity 1.2s ease;transform-origin:50% 92%}
+    .dish-cloche.lifted{transform:translate(-50%,-82%);opacity:0}
+    .cloche-dome{position:absolute;left:10%;right:10%;bottom:10%;height:78%;border-radius:50% 50% 42% 42% / 64% 64% 24% 24%;background:linear-gradient(135deg, rgba(255,255,255,.42), rgba(255,255,255,.12) 28%, rgba(232,220,205,.26) 58%, rgba(177,154,130,.18) 100%);border:1px solid rgba(255,255,255,.42);box-shadow:inset -20px -16px 34px rgba(114,88,62,.12), inset 22px 18px 28px rgba(255,255,255,.22), 0 16px 28px rgba(76,58,38,.18);backdrop-filter:blur(3px)}
+    .cloche-dome::before{content:'';position:absolute;left:18%;top:12%;width:24%;height:42%;border-radius:50%;background:linear-gradient(180deg, rgba(255,255,255,.34), rgba(255,255,255,.03));filter:blur(1px);transform:rotate(12deg)}
+    .cloche-rim{position:absolute;left:7%;right:7%;bottom:6%;height:14%;border-radius:50%;background:linear-gradient(180deg,#efe4d7,#bca384);box-shadow:0 8px 14px rgba(91,67,43,.18), inset 0 2px 2px rgba(255,255,255,.35);border:1px solid rgba(164,133,99,.45)}
+    .cloche-knob{position:absolute;left:50%;top:2%;width:14%;height:16%;transform:translateX(-50%)}
+    .cloche-knob::before{content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:34%;height:55%;background:linear-gradient(180deg,#f7efe5,#c3aa8b);border-radius:12px;box-shadow:0 4px 10px rgba(80,58,35,.12)}
+    .cloche-knob::after{content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);width:100%;height:62%;background:radial-gradient(circle at 35% 30%, #fff9f2, #d7bea1 70%, #b18f69 100%);border-radius:50%;box-shadow:0 8px 18px rgba(86,58,31,.16)}
     @keyframes dishFloat{0%,100%{transform:perspective(1200px) rotateX(2deg) translateY(0)}50%{transform:perspective(1200px) rotateX(2deg) translateY(-8px)}}
 
     @media(max-width:1120px){.grid,.ingredient-shell{grid-template-columns:1fr}.visual-panel{min-height:390px}.ingredient-stage{min-height:540px}.oven-wrap{min-height:440px}.dressage-stage{min-height:560px}.site-nav,.scene-nav{display:none}.topbar{grid-template-columns:auto auto;justify-content:space-between}.header-actions{grid-column:2}.benefit-card{position:relative;display:inline-block;margin:10px;width:calc(50% - 24px);left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important}.dressage-stage{display:block;padding-top:420px;min-height:900px}.dressage-labels{position:relative;left:auto;bottom:auto;transform:none;width:100%;margin-top:270px;justify-content:center}.real-dish-showcase{top:170px;width:min(640px,82vw)}.controls{left:16px;right:16px;justify-content:space-between}}
@@ -381,6 +389,11 @@
           <div class="dressage-stage anim-in plate-reveal" style="--d:.18s">
             <div class="real-dish-showcase" aria-hidden="true">
               <div class="real-dish-shadow"></div>
+              <div class="dish-cloche" id="dishCloche">
+                <div class="cloche-knob"></div>
+                <div class="cloche-dome"></div>
+                <div class="cloche-rim"></div>
+              </div>
               <img class="real-dish-img" src="assets/dressage-bowl-3d.png" alt="">
             </div></div>
             <div class="dressage-labels">
@@ -441,6 +454,7 @@
     setTimeout(()=>scenes.forEach((s,i)=>{ if(i!==current) s.classList.remove('leaving-up','leaving-down'); }), 820);
     updateUI();
   }
+  let clocheTimer = null;
   function updateUI(){
     progress.style.setProperty('--progress', ((current)/(scenes.length-1)*100)+'%');
     navSceneButtons.forEach((b,i)=>b.classList.toggle('active', i===current));
@@ -448,7 +462,15 @@
     document.getElementById('nextBtn').disabled = current===scenes.length-1;
     notesTitle.textContent = scenes[current].dataset.noteTitle || '';
     notesText.textContent = scenes[current].dataset.note || '';
-    if(current === 4){ setTimeout(()=>document.querySelector('.dressage-stage')?.classList.add('plate-reveal'), 180); }
+    const cloche = document.getElementById('dishCloche');
+    clearTimeout(clocheTimer);
+    if(current === 4){
+      document.querySelector('.dressage-stage')?.classList.add('plate-reveal');
+      cloche?.classList.remove('lifted');
+      clocheTimer = setTimeout(()=>cloche?.classList.add('lifted'), 2000);
+    } else {
+      cloche?.classList.remove('lifted');
+    }
   }
   navButtons.forEach(btn => btn.addEventListener('click', () => setScene(Number(btn.dataset.go))));
   document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>setScene(current+1)));
